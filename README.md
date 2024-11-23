@@ -1,12 +1,44 @@
-# Medical-Cost-EDA-Prediction
-### **Project Description**
+# Predicting Medical Costs using Machine Learning
 
-The project focuses on predicting medical insurance costs using machine learning techniques. By analyzing a dataset containing features such as age, BMI, smoking status, and region, the goal is to build models that accurately predict healthcare charges and provide meaningful insights into the factors influencing these costs.
+## Description of the Project
+This project focuses on analyzing a dataset containing medical cost information to uncover meaningful insights and predict healthcare charges. The primary objectives include:
+1. Conducting exploratory data analysis (EDA) to understand the dataset's structure, distribution, and relationships.
+2. Building regression models to predict medical costs as continuous values.
+3. Transforming the problem into a classification task to label medical costs as "cheap" or "expensive" based on a defined threshold.
+4. Evaluating the performance of various models to identify the best-performing approach.
 
-The project has two primary objectives:
-1. **Regression Analysis:** Estimate healthcare charges as continuous values using regression models.
-2. **Classification Task:** Transform the problem into a binary classification to label charges as either "cheap" or "expensive" based on a predefined threshold.
+## Details About the Used Approach
+1. **Exploratory Data Analysis (EDA):**
+   - Identified key statistical properties of the dataset (mean, median, outliers).
+   - Explored relationships between features (e.g., age, BMI, smoking status) and medical charges.
+   - Visualized distributions and detected outliers using boxplots.
 
-Through exploratory data analysis (EDA), relationships between features and medical charges are visualized, while identifying and handling outliers to improve model performance. Machine learning models such as Linear Regression, Random Forest, Gradient Boosting, and Neural Networks are implemented to solve regression problems, while models like Logistic Regression and Random Forest are applied for classification tasks.
+2. **Regression Models:**
+   - Used multiple models: Linear Regression, Random Forest, Gradient Boosting, and Neural Network.
+   - Compared the models' performance using R², Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE).
 
-The solution emphasizes rigorous evaluation metrics for both regression (e.g., R², MAE, MSE) and classification (e.g., Precision, Recall, F1-Score). The project concludes by identifying high-performing models and providing actionable insights to enhance predictive accuracy for medical costs in future applications.
+3. **Classification Models:**
+   - Converted the continuous target variable (`charges`) into binary labels:
+     - "Cheap" (0): Charges below a defined threshold.
+     - "Expensive" (1): Charges above the threshold.
+   - Evaluated performance using precision, recall, F1-score, and accuracy.
+
+4. **Data Preprocessing:**
+   - Encoded categorical variables using one-hot encoding.
+   - Standardized numerical variables for use in Neural Networks.
+   - Handled outliers to improve model stability.
+
+## Solution Architecture
+1. **Data Preprocessing:**
+   - **Input:** Dataset with features like age, sex, BMI, children, smoking status, region, and charges.
+   - **Processing Steps:**
+     - Remove outliers using IQR.
+     - Encode categorical variables and scale numerical features.
+   - **Output:** Preprocessed data ready for model training.
+
+2. **Model Training:**
+   - **Regression Pipeline:** Linear Regression, Random Forest, Gradient Boosting, and Neural Network.
+   - **Classification Pipeline:** Logistic Regression, Random Forest, and other classifiers.
+
+3. **Evaluation:**
+   - Models were evaluated using both regression and classification metrics.
